@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+</head>
+
+<body>
+    <a-scene>
+        <a-entity position="2 0 0" rotation="0 170 0">
+            <a-camera></a-camera>
+        </a-entity>
+        <a-sound src="src: url(wdik.mp3)" autoplay="true" position="0 2 5" loop=true></a-sound>
+        <a-sky color="black"></a-sky>
+        <a-assets>
+            <img id="pumpkinImg" src="pumpkin.jpg">
+            <img id="divide" src="divide.jpg">
+            <img id="multiply" src="multiply.jpg">
+            <img id="plus" src="plus.jpg">
+
+            <a-asset-item id="glasses-obj" src="glasses.obj"></a-asset-item>
+            <a-asset-item id="glasses-mtl" src="glasses.mtl"></a-asset-item>
+            <a-asset-item id="guitar-obj" src="guitar.obj"></a-asset-item>
+            <a-asset-item id="guitar-mtl" src="guitar.mtl"></a-asset-item>
+            <a-asset-item id="hair-obj" src="hair.obj"></a-asset-item>
+            <a-asset-item id="hair-mtl" src="hair.mtl"></a-asset-item>
+        </a-assets>
+        <a-light type="ambient" color="#D95407"></a-light>
+        <!--<a-light type="spot" target="#divide"></a-light>-->
+        <a-entity obj-model="obj: #guitar-obj; mtl: #guitar-mtl" scale="0.005 0.005 0.005" position="0 -0.5 -5" rotation="0 -20 0">
+            <a-animation attribute="rotation" begin="0" dur="1000" easing="linear" from="0 0 60" to="0 0 90" direction="alternate" repeat="indefinite">></a-animation>
+        </a-entity>
+        <a-entity id="pumpkinF">
+            <a-sphere radius="2" position="0 1 -6" src="#pumpkinImg" rotation="20 -30 0">
+                <a-entity obj-model="obj: #glasses-obj; mtl: #glasses-mtl" scale="0.18 0.2 0.25" position="1.08 0.65 1.679" rotation="0 20 0"></a-entity>
+                <a-entity obj-model="obj: #hair-obj; mtl: #hair-mtl" scale="0.005 0.004 0.004" position="0 -0.5 0" rotation="0 20 0" material="color: #ff8000">
+                </a-entity>
+                <a-cone id="nose" height="0.4" radius-bottom="0.25" radius-top="0.02" color="black" position="1.15 0.2 1.7"></a-cone>
+                <a-entity id="eyeR">
+                    <a-cone height="0.4" radius-bottom="0.12" radius-top="0.02" color="black" position="1.34 0.7 1.3" rotation="0 0 90"></a-cone>
+                    <a-sphere radius="0.12" color="black" position="1.5 0.7 1.25"></a-sphere>
+                </a-entity>
+                <a-entity id="eyeL">
+                    <a-cone height="0.3" radius-bottom="0.12" radius-top="0.02" color="black" position="0.65 0.7 1.8" rotation="0 0 270"></a-cone>
+                    <a-sphere radius="0.12" color="black" position="0.5 0.7 1.9"></a-sphere>
+                </a-entity>
+                <a-entity id="mouth">
+                    <a-cylinder color="black" theta-start="280" theta-length="180" side="double" rotation="90 0 -20" height="0.5" radius="0.4" position="1 -0.2 1.5"></a-cylinder>
+                </a-entity>
+                <a-cylinder color="green" height="2" radius="0.25" position="0 2 0"></a-cylinder>
+            </a-sphere>
+            <a-animation attribute="position" begin="0" dur="1000" easing="linear" from="-1 1 -3" to="2 1 -3" direction="alternate" repeat="indefinite"></a-animation>
+        </a-entity>
+
+        <!--Back Scene-->
+
+
+        <a-entity obj-model="obj: #guitar-obj; mtl: #guitar-mtl" scale="0.005 0.005 0.005" position="1 -0.5 4" rotation="270 20 0">
+            <a-animation attribute="rotation" begin="0" dur="1000" easing="linear" from="180 0 60" to="180 0 90" direction="alternate" repeat="indefinite">></a-animation>
+        </a-entity>
+        <a-entity id="pumpkinB">
+            <a-sphere radius="2" position="0 1 12" src="#pumpkinImg" rotation="0 135 0">
+                <a-entity obj-model="obj: #glasses-obj; mtl: #glasses-mtl" scale="0.18 0.2 0.25" position="1.08 0.65 1.679" rotation="0 20 0"></a-entity>
+                <a-entity obj-model="obj: #hair-obj; mtl: #hair-mtl" scale="0.005 0.004 0.004" position="0 -0.5 0" rotation="0 20 0" material="color: #ff8000"></a-entity>
+                <a-cone id="nose" height="0.4" radius-bottom="0.25" radius-top="0.02" color="black" position="1.15 0.2 1.7"></a-cone>
+                <a-entity id="eyeR">
+                    <a-cone height="0.4" radius-bottom="0.12" radius-top="0.02" color="black" position="1.34 0.7 1.3" rotation="0 0 90"></a-cone>
+                    <a-sphere radius="0.12" color="black" position="1.5 0.7 1.25"></a-sphere>
+                </a-entity>
+                <a-entity id="eyeL">
+                    <a-cone height="0.3" radius-bottom="0.12" radius-top="0.02" color="black" position="0.65 0.7 1.8" rotation="0 0 270"></a-cone>
+                    <a-sphere radius="0.12" color="black" position="0.5 0.7 1.9"></a-sphere>
+                </a-entity>
+                <a-entity id="mouth">
+                    <a-cylinder color="black" theta-start="280" theta-length="180" side="double" rotation="90 0 -20" height="0.5" radius="0.4" position="1 -0.2 1.5"></a-cylinder>
+                </a-entity>
+                <a-cylinder color="green" height="2" radius="0.25" position="0 2 0"></a-cylinder>
+            </a-sphere>
+            <a-animation attribute="position" begin="0" dur="1000" easing="linear" from="-1 1 -3" to="2 1 -3" direction="alternate" repeat="indefinite"></a-animation>
+        </a-entity>
+
+        <!--Album Spheres-->
+        <a-box src="#multiply" color="#23C484" radius="0.5" position="5 2 1" rotation="0 180 0">
+            <a-animation attribute="position" begin="0" dur="1000" easing="linear" from="5 2 1" to="5.5 1.6 1" direction="alternate" repeat="indefinite"></a-animation>
+        </a-box>
+        <a-entity id="divide">
+        <a-box src="#divide" color="#00BEE9" radius="0.5" position="5 1 0" rotation="0 180 0">
+            <a-animation attribute="position" begin="0" dur="1000" easing="linear" from="5 1 0" to="5.5 .6 0" direction="alternate" repeat="indefinite"></a-animation>
+        </a-box>
+        </a-entity>
+        <a-box src="#plus" color="#FF941D" radius="0.5" position="5 2 -1">
+            <a-animation attribute="position" begin="0" dur="1000" easing="linear" from="5 2 -1" to="5.5 1.6 -1" direction="alternate" repeat="indefinite"></a-animation>
+        </a-box>
+        <!--other album spheres-->
+
+        <a-box src="#multiply" color="#23C484" radius="0.5" position="-3 2 1" rotation="0 180 0">
+            <a-animation attribute="position" begin="0" dur="1000" easing="linear" from="-1 2 1" to="-1.5 1.6 1" direction="alternate" repeat="indefinite"></a-animation>
+        </a-box>
+        <a-box src="#divide" color="#00BEE9" radius="0.5" position="-3 1 0" rotation="0 180 0">
+            <a-animation attribute="position" begin="0" dur="1000" easing="linear" from="-1 1 0" to="-1.5 .6 0" direction="alternate" repeat="indefinite"></a-animation>
+        </a-box>
+        <a-box src="#plus" color="#FF941D" radius="0.5" position="-3 2 -1">
+            <a-animation attribute="position" begin="0" dur="1000" easing="linear" from="-1 2 -1" to="-1.5 1.6 -1" direction="alternate" repeat="indefinite"></a-animation>
+        </a-box>
+
+    </a-scene>
+</body>
+
+</html>
